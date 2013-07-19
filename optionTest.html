@@ -1,0 +1,26 @@
+<head>
+  <title>optionTest</title>
+</head>
+
+<body>
+  {{> hello}}
+</body>
+
+<template name="hello">
+  <h1>Hello World!</h1>
+  <div id="syntaxMode" class="statusBarButton pull-left">
+    <select id="syntaxModeSelect" class="input-medium" size="1">
+      {{> syntaxModeOptions}}
+    </select>
+  </div>
+  
+</template>
+
+<template name="syntaxModeOptions">
+  <option value="">Select syntax&hellip;</option>
+  {{#each syntaxModes}}
+    <option value="{{name}}" {{selected}}>
+      {{caption}}</option>
+  {{/each}}
+</template>
+
