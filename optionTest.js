@@ -12,7 +12,8 @@ if (Meteor.isClient) {
         {name:'d', caption:'D'}
       ];
     },
-
+    
+    /*
     selected: function() {
       if (this.name == Session.get('syntax')) {
         return "selected=selecte";
@@ -20,12 +21,13 @@ if (Meteor.isClient) {
         return "";
       }
     }
+    */
   });
   
   Meteor.startup(function() {
     Deps.autorun(keep_select_updated)
   })
-  
+
   function keep_select_updated(){
     $('#syntaxModeSelect').val(Session.get("syntax"))
   }
